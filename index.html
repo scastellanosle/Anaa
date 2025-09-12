@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feliz Cumpleaños Ana</title>
     <!-- Fuente Italianno -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,10 +58,117 @@
         height: 500px;
         object-fit: contain;
       }
+
+      @media (max-width: 900px) {
+        body {
+          height: 100vh;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        .contenido {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100vw;
+          min-height: 100vh;
+        }
+
+        img {
+          width: 100vw;
+          height: 55vh;
+          max-height: 60vh;
+          object-fit: contain;
+          margin: 0;
+          order: 2;
+        }
+
+        .titulo-flex {
+          width: 100vw;
+          margin-top: 8vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          order: 0;
+          z-index: 2;
+        }
+
+        .titulo-flex span {
+          font-size: 12vw;
+          line-height: 1;
+        }
+
+        h2 {
+          width: 100vw;
+          font-size: 12vw;
+          text-align: center;
+          margin: 0 0 2vw 0;
+          order: 1;
+          z-index: 2;
+        }
+      }
+
       .contenido {
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+
+      @media (max-width: 900px) {
+        body {
+          padding-top: 0;
+          height: 100vh;
+          overflow: hidden;
+        }
+
+        .contenido {
+          height: 100vh;
+          width: 100vw;
+          justify-content: flex-start;
+          position: relative;
+          padding-top: 80px;
+        }
+
+        .titulo-flex {
+          flex-direction: column;
+          gap: 0;
+          align-items: center;
+          margin-bottom: 0;
+        }
+
+        .titulo-flex span {
+          font-size: 96px;
+          line-height: 1;
+          display: block;
+          margin-bottom: 18px;
+        }
+
+        .titulo-flex span:last-child {
+          margin-bottom: 0;
+        }
+
+        h2 {
+          font-size: 96px;
+          margin-top: 18px;
+          margin-bottom: 0;
+          position: relative;
+          z-index: 1;
+        }
+
+        img {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: auto;
+          height: 75vh;
+          max-width: 90vw;
+          object-fit: contain;
+          z-index: 0;
+        }
       }
     </style>
   </head>

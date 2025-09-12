@@ -13,12 +13,14 @@
     <style>
       body {
         margin: 0;
-        padding-top: 35px;
+        padding: 0;
+        min-height: 100vh;
         background-color: #f2e8e8;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family: "Italianno", cursive;
+        box-sizing: border-box;
       }
 
       .titulo-flex {
@@ -71,6 +73,37 @@
       }
 
       @media (max-width: 900px) {
+        body {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 0;
+        }
+        .contenido {
+          flex: 1 1 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start; /* Empuja el contenido arriba */
+          width: 100%;
+        }
+        .gato-abajo {
+          margin-top: auto; /* Empuja la imagen del gato hacia abajo */
+          margin-bottom: 2vw; /* Muy cerca del borde inferior */
+          width: 80vw;
+          height: auto;
+          max-width: 320px;
+        }
+        img:not(.gato-abajo) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .contenido {
+          width: 100%;
+          flex: 1 1 0;
+          justify-content: flex-end;
+        }
         .titulo-flex {
           flex-direction: column;
           align-items: center;
@@ -83,32 +116,99 @@
           line-height: 1;
         }
         .titulo-flex span:first-child {
-          margin-bottom: 3vw; /* Espacio entre Feliz y Cumpleaños */
+          margin-bottom: 3vw;
         }
         h2 {
           font-size: 12vw;
-          margin-top: 3vw; /* Mismo espacio entre Cumpleaños y Ana */
+          margin-top: 3vw;
           font-weight: 400;
           text-align: center;
         }
         img {
-          margin-top: -30px;
+          margin-top: 0;
+          margin-bottom: 2vw; /* Muy cerca del borde inferior */
           width: 80vw;
           height: auto;
           max-width: 320px;
         }
-        body {
-          padding-top: 2vw;
+      }
+
+      /* Centra el contenido en todas las vistas */
+      .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .gif-abajo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra verticalmente el gif respecto al párrafo */
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+        gap: 4vw;
+      }
+      .gif-abajo img {
+        width: 120px;
+        height: auto;
+        align-self: flex-end; /* Hace que la abeja baje al fondo del bloque */
+        margin-bottom: 20px; /* Puedes ajustar este valor para bajarla más */
+      }
+      .parrafo-abeja {
+        max-width: 600px;
+        font-size: 1.5em;
+        color: #444;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        margin: 0;
+      }
+      @media (min-width: 900px) {
+        .gif-abajo img {
+          width: 180px;
+          align-self: flex-end;
+          margin-bottom: 40px; /* Más separación en escritorio */
+        }
+        .gif-abajo {
+          margin-top: 40px;
+          margin-bottom: 60px;
+          gap: 60px;
+        }
+        .parrafo-abeja {
+          font-size: 2em;
+          max-width: 800px;
         }
       }
     </style>
   </head>
   <body>
-    <h1 class="titulo-flex">
-      <span>Feliz&nbsp;</span>
-      <span>Cumpleaños</span>
-    </h1>
-    <h2>Ana</h2>
-    <img src="gato.png" alt="gatito lindo" />
+    <div class="contenido">
+      <h1 class="titulo-flex">
+        <span>Feliz&nbsp;</span>
+        <span>Cumpleaños</span>
+      </h1>
+      <h2>Ana</h2>
+      <img src="gato.png" alt="gatito lindo" class="gato-abajo" />
+      <div class="gif-abajo">
+        <p class="parrafo-abeja">
+          Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero
+          la mayoría sufrió alteraciones en alguna manera, ya sea porque se le
+          agregó humor, o palabras aleatorias que no parecen ni un poco
+          creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar
+          seguro de que no hay nada avergonzante escondido en el medio del
+          texto. Todos los generadores de Lorem Ipsum que se encuentran en
+          Internet tienden a repetir trozos predefinidos cuando sea necesario,
+          haciendo a este el único generador verdadero (válido) en la Internet.
+          Usa un diccionario de mas de 200 palabras provenientes del latín,
+          combinadas con estructuras muy útiles de sentencias, para generar
+          texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado
+          siempre estará libre de repeticiones, humor agregado o palabras no
+          características del lenguaje, etc.
+        </p>
+        <img src="minecraft-minecraft-bee.gif" alt="abeja" />
+      </div>
+    </div>
   </body>
 </html>

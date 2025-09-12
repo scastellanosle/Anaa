@@ -13,7 +13,7 @@
     <style>
       body {
         margin: 0;
-        padding: 0;
+        padding-top: 56px;
         min-height: 100vh;
         background-color: #f2e8e8;
         display: flex;
@@ -21,18 +21,19 @@
         align-items: center;
         font-family: "Italianno", cursive;
         box-sizing: border-box;
+        overflow: hidden;
       }
 
       .titulo-flex {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: flex-end;
         width: 100%;
         gap: 0.1em;
       }
+
       .titulo-flex span {
-        font-size: 16vw;
+        font-size: 350px;
         color: #d59ea4;
         font-weight: 400;
         line-height: 1;
@@ -43,178 +44,23 @@
       }
 
       h2 {
-        font-size: 12vw;
+        font-size: 350px;
         color: #d59ea4;
-        margin-top: 3vw; /* Igual que el margin-bottom de Feliz en móvil */
+        margin-top: -132px;
         font-weight: 400;
         text-align: center;
       }
 
       img {
-        margin-top: -5vw;
-        width: 445px;
-        height: 480px;
+        margin-top: -572px;
+        width: 465px;
+        height: 500px;
         object-fit: contain;
       }
-
-      @media (min-width: 900px) {
-        .titulo-flex span {
-          font-size: 350px;
-        }
-        h2 {
-          font-size: 350px;
-          margin-top: -100px;
-        }
-        img {
-          margin-top: -560px;
-          width: 445px;
-          height: 480px;
-        }
-      }
-
-      @media (max-width: 900px) {
-        body,
-        html {
-          height: 100%;
-          min-height: 100vh;
-          margin: 0;
-          padding: 0;
-        }
-        body {
-          min-height: 100vh;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
-          padding: 0;
-          overflow-x: hidden;
-        }
-        .contenido {
-          flex: 1 1 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-end;
-          width: 100vw;
-          min-height: 100vh;
-          padding: 0;
-          margin: 0;
-        }
-        .gato-abajo {
-          width: 100vw;
-          max-width: 100vw;
-          height: 55vh;
-          max-height: 60vh;
-          object-fit: contain;
-          margin: 0;
-          display: block;
-          order: 2;
-        }
-        .titulo-flex {
-          width: 100vw;
-          margin: 0;
-          margin-top: 8vw;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0;
-          order: 0;
-          z-index: 2;
-        }
-        .titulo-flex span {
-          font-size: 12vw;
-          color: #d59ea4;
-          font-weight: 400;
-          line-height: 1;
-          text-align: center;
-          white-space: nowrap;
-          margin: 0;
-          padding: 0;
-        }
-        h2 {
-          width: 100vw;
-          font-size: 12vw;
-          color: #d59ea4;
-          font-weight: 400;
-          text-align: center;
-          margin: 0;
-          margin-bottom: 2vw;
-          order: 1;
-          z-index: 2;
-        }
-        .gif-abajo,
-        .parrafo-abeja {
-          width: 100vw;
-          max-width: 100vw;
-          box-sizing: border-box;
-        }
-        .gif-abajo {
-          justify-content: center;
-          align-items: center;
-          margin-top: 8vw;
-          margin-bottom: 3vw;
-          gap: 4vw;
-        }
-        .gif-abajo img {
-          width: 80px;
-          height: auto;
-          margin-bottom: 0;
-          align-self: center;
-        }
-        .parrafo-abeja {
-          max-width: 400px;
-          font-size: 1.1em;
-          margin: 0 auto;
-        }
-      }
-
-      /* Centra el contenido en todas las vistas */
       .contenido {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .gif-abajo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center; /* Centra verticalmente el gif respecto al párrafo */
-        margin-top: 3vw;
-        margin-bottom: 3vw;
-        gap: 4vw;
-      }
-      .gif-abajo img {
-        width: 120px;
-        height: auto;
-        align-self: flex-end; /* Hace que la abeja baje al fondo del bloque */
-        margin-bottom: 20px; /* Puedes ajustar este valor para bajarla más */
-      }
-      .parrafo-abeja {
-        max-width: 600px;
-        font-size: 1.5em;
-        color: #444;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: left;
-        margin: 0;
-      }
-      @media (min-width: 900px) {
-        .gif-abajo img {
-          width: 180px;
-          align-self: flex-end;
-          margin-bottom: 40px; /* Más separación en escritorio */
-        }
-        .gif-abajo {
-          margin-top: 40px;
-          margin-bottom: 60px;
-          gap: 60px;
-        }
-        .parrafo-abeja {
-          font-size: 2em;
-          max-width: 800px;
-        }
       }
     </style>
   </head>
@@ -225,25 +71,7 @@
         <span>Cumpleaños</span>
       </h1>
       <h2>Ana</h2>
-      <img src="gato.png" alt="gatito lindo" class="gato-abajo" />
-      <div class="gif-abajo">
-        <p class="parrafo-abeja">
-          Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero
-          la mayoría sufrió alteraciones en alguna manera, ya sea porque se le
-          agregó humor, o palabras aleatorias que no parecen ni un poco
-          creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar
-          seguro de que no hay nada avergonzante escondido en el medio del
-          texto. Todos los generadores de Lorem Ipsum que se encuentran en
-          Internet tienden a repetir trozos predefinidos cuando sea necesario,
-          haciendo a este el único generador verdadero (válido) en la Internet.
-          Usa un diccionario de mas de 200 palabras provenientes del latín,
-          combinadas con estructuras muy útiles de sentencias, para generar
-          texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado
-          siempre estará libre de repeticiones, humor agregado o palabras no
-          características del lenguaje, etc.
-        </p>
-        <img src="minecraft-minecraft-bee.gif" alt="abeja" />
-      </div>
+      <img src="gato.png" alt="gatito lindo" />
     </div>
   </body>
 </html>

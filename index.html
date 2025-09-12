@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feliz Cumpleaños Ana</title>
-    <!-- Fuente Italianno -->
+    <!-- Fuentes Italianno e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@1,14..32,600&family=Italianno&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* Estilos base para Desktop (1200px+) */
       body {
         margin: 0;
         padding-top: 56px;
@@ -22,7 +23,13 @@
         align-items: center;
         font-family: "Italianno", cursive;
         box-sizing: border-box;
-        overflow: hidden;
+        overflow-x: hidden;
+      }
+
+      .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .titulo-flex {
@@ -59,72 +66,199 @@
         object-fit: contain;
       }
 
-      @media (max-width: 900px) {
+      /* Nueva sección de texto con imagen */
+      .seccion-texto {
+        width: 100%;
+        max-width: 1400px;
+        margin-top: 100px;
+        padding: 0 60px;
+        display: flex;
+        align-items: center;
+        gap: 120px;
+      }
+
+      .texto-contenido {
+        flex: 1;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 1.2;
+        color: #000000;
+        text-align: justify;
+      }
+
+      .imagen-vinilo {
+        flex-shrink: 0;
+        width: 650px;
+        height: 650px;
+      }
+
+      .imagen-vinilo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin: 0;
+      }
+
+      /* Laptops con pantallas anchas (1200px+ pero altura limitada) */
+      @media (min-width: 1200px) and (max-height: 800px) {
         body {
-          height: 100vh;
-          padding: 0;
+          padding-top: 20px;
+        }
+
+        .titulo-flex span {
+          font-size: 240px;
+        }
+
+        h2 {
+          font-size: 240px;
+          margin-top: -95px;
+        }
+
+        img {
+          margin-top: -400px;
+          width: 350px;
+          height: 375px;
+        }
+
+        .seccion-texto {
+          margin-top: 80px;
+          padding: 0 40px;
+          gap: 80px;
+        }
+
+        .texto-contenido {
+          font-size: 28px;
+        }
+
+        .imagen-vinilo {
+          width: 300px;
+          height: 300px;
+        }
+      }
+
+      /* Tablets y Laptops pequeñas (901px - 1199px) */
+      @media (max-width: 1199px) and (min-width: 901px) {
+        body {
+          padding-top: 30px;
+        }
+
+        .titulo-flex span {
+          font-size: 200px;
+        }
+
+        h2 {
+          font-size: 200px;
+          margin-top: -75px;
+        }
+
+        img {
+          margin-top: -330px;
+          width: 280px;
+          height: 300px;
+        }
+
+        .seccion-texto {
+          margin-top: 60px;
+          padding: 0 30px;
+          gap: 60px;
+        }
+
+        .texto-contenido {
+          font-size: 24px;
+        }
+
+        .imagen-vinilo {
+          width: 250px;
+          height: 250px;
+        }
+      }
+
+      /* Tablets en orientación portrait (601px - 900px) */
+      @media (max-width: 900px) and (min-width: 601px) {
+        body {
+          padding-top: 60px;
+          height: auto;
+          min-height: 100vh;
           overflow-x: hidden;
         }
 
         .contenido {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-end;
-          width: 100vw;
+          height: auto;
           min-height: 100vh;
-        }
-
-        img {
           width: 100vw;
-          height: 55vh;
-          max-height: 60vh;
-          object-fit: contain;
-          margin: 0;
-          order: 2;
+          justify-content: flex-start;
+          position: relative;
         }
 
         .titulo-flex {
-          width: 100vw;
-          margin-top: 8vw;
-          display: flex;
           flex-direction: column;
+          gap: 0;
           align-items: center;
-          order: 0;
-          z-index: 2;
+          margin-bottom: 0;
         }
 
         .titulo-flex span {
-          font-size: 12vw;
+          font-size: 120px;
           line-height: 1;
+          display: block;
+          margin-bottom: 20px;
+        }
+
+        .titulo-flex span:last-child {
+          margin-bottom: 0;
         }
 
         h2 {
-          width: 100vw;
-          font-size: 12vw;
+          font-size: 120px;
+          margin-top: 20px;
+          margin-bottom: 0;
+          position: relative;
+          z-index: 1;
+        }
+
+        img {
+          position: static;
+          margin: 40px auto 0;
+          width: auto;
+          height: 300px;
+          max-width: 85vw;
+          object-fit: contain;
+          z-index: 0;
+        }
+
+        .seccion-texto {
+          margin-top: 60px;
+          padding: 0 20px;
+          flex-direction: column;
+          gap: 40px;
           text-align: center;
-          margin: 0 0 2vw 0;
-          order: 1;
-          z-index: 2;
+        }
+
+        .texto-contenido {
+          font-size: 20px;
+          text-align: center;
+        }
+
+        .imagen-vinilo {
+          width: 200px;
+          height: 200px;
+          align-self: center;
         }
       }
 
-      .contenido {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      @media (max-width: 900px) {
+      /* Móviles (600px y menos) */
+      @media (max-width: 600px) {
         body {
           padding-top: 0;
-          height: 100vh;
-          overflow: hidden;
+          height: auto;
+          min-height: 100vh;
+          overflow-x: hidden;
         }
 
         .contenido {
-          height: 100vh;
+          height: auto;
+          min-height: 100vh;
           width: 100vw;
           justify-content: flex-start;
           position: relative;
@@ -158,16 +292,33 @@
         }
 
         img {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: 0 auto;
+          position: static;
+          margin: 30px auto 0;
           width: auto;
-          height: 75vh;
+          height: 250px;
           max-width: 90vw;
           object-fit: contain;
           z-index: 0;
+        }
+
+        .seccion-texto {
+          margin-top: 40px;
+          padding: 0 15px;
+          flex-direction: column;
+          gap: 30px;
+          text-align: center;
+        }
+
+        .texto-contenido {
+          font-size: 18px;
+          text-align: center;
+          line-height: 1.5;
+        }
+
+        .imagen-vinilo {
+          width: 150px;
+          height: 150px;
+          align-self: center;
         }
       }
     </style>
@@ -180,6 +331,36 @@
       </h1>
       <h2>Ana</h2>
       <img src="gato.png" alt="gatito lindo" />
+    </div>
+
+    <!-- Nueva sección con texto e imagen -->
+    <div class="seccion-texto">
+      <div class="texto-contenido">
+        <p>
+          Hoy celebro no solo el día en que llegaste al mundo, sino también la
+          luz, la fuerza y la inspiración que compartes con quienes tienen la
+          fortuna de conocerte. Deseo de corazón que la vida te recompense con
+          creces por todo el esfuerzo, la dedicación y el amor que entregas cada
+          día.
+        </p>
+
+        <p>
+          Eres una mujer admirable, ejemplo de constancia y fortaleza, y al
+          mismo tiempo una persona llena de ternura y autenticidad. Cualquier
+          persona se sentiría profundamente agradecida de tenerte en su vida,
+          porque contigo todo se vuelve más valioso y especial.
+        </p>
+
+        <p>
+          Eres única, indescriptible, la niña más indefinible del mundo, y
+          precisamente en esa esencia tan tuya está la belleza que te distingue.
+          Que este nuevo año de vida te traiga alegría, paz, y todos los sueños
+          que tu corazón anhele.
+        </p>
+      </div>
+      <div class="imagen-vinilo">
+        <img src="vinilo.png" alt="Disco de vinilo" />
+      </div>
     </div>
   </body>
 </html>

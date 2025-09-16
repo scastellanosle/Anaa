@@ -112,6 +112,45 @@
         margin: 0;
       }
 
+      /* Sección independiente para imagen Minecraft */
+      .seccion-minecraft {
+        width: 100%;
+        margin-top: 700px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        clear: both;
+      }
+
+      .contenedor-minecraft {
+        display: block;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .imagen-minecraft {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .paisaje-minecraft {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .abeja-gif {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        top: 15%;
+        left: 25%;
+        z-index: 1;
+      }
+
       /* Laptops con pantallas anchas (1200px+ pero altura limitada) */
       @media (min-width: 1200px) and (max-height: 800px) {
         body {
@@ -135,7 +174,7 @@
 
         .seccion-texto {
           margin-top: 80px;
-          padding: 40px 0 40px 60px;
+          padding: 40px 0 40px 80px;
           gap: 50px;
         }
 
@@ -150,6 +189,26 @@
         .imagen-vinilo img {
           width: 480px;
           height: 480px;
+        }
+
+        .seccion-minecraft {
+          margin-top: 450px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+        .contenedor-minecraft {
+          max-width: 750px;
+        }
+
+        .imagen-minecraft {
+          max-width: 750px;
+        }
+
+        .abeja-gif {
+          width: 56px;
+          height: 56px;
         }
       }
 
@@ -191,6 +250,26 @@
         .imagen-vinilo img {
           width: 380px;
           height: 380px;
+        }
+
+        .seccion-minecraft {
+          margin-top: 400px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+        .contenedor-minecraft {
+          max-width: 650px;
+        }
+
+        .imagen-minecraft {
+          max-width: 650px;
+        }
+
+        .abeja-gif {
+          width: 49px;
+          height: 49px;
         }
       }
 
@@ -272,6 +351,25 @@
         .imagen-vinilo img {
           width: 280px;
           height: 280px;
+        }
+
+        .seccion-minecraft {
+          margin-top: 80px;
+          padding: 0 30px 0 30px;
+        }
+
+        .contenedor-minecraft {
+          max-width: 90%;
+          margin: 0 auto;
+        }
+
+        .imagen-minecraft {
+          max-width: 100%;
+        }
+
+        .abeja-gif {
+          width: 30px;
+          height: 30px;
         }
       }
 
@@ -356,6 +454,25 @@
           width: 200px;
           height: 200px;
         }
+
+        .seccion-minecraft {
+          margin-top: 60px;
+          padding: 0 20px 0 20px;
+        }
+
+        .contenedor-minecraft {
+          max-width: 95%;
+          margin: 0 auto;
+        }
+
+        .imagen-minecraft {
+          max-width: 100%;
+        }
+
+        .abeja-gif {
+          width: 25px;
+          height: 25px;
+        }
       }
     </style>
   </head>
@@ -398,5 +515,19 @@
         <img src="vinilo.png" alt="Disco de vinilo" />
       </div>
     </div>
+
+    <!-- Sección independiente para imagen Minecraft -->
+    <section class="seccion-minecraft">
+      <div class="contenedor-minecraft">
+        <div class="imagen-minecraft">
+          <img
+            src="minecraft-paisaje.png"
+            alt="Paisaje de Minecraft"
+            class="paisaje-minecraft"
+          />
+          <img src="abeja.gif" alt="Abeja animada" class="abeja-gif" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>

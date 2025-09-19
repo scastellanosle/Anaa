@@ -110,12 +110,18 @@
         height: 760px;
         object-fit: contain;
         margin: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .imagen-vinilo img:hover {
+        transform: scale(1.05);
       }
 
       /* Sección independiente para imagen Minecraft */
       .seccion-minecraft {
         width: 100%;
-        margin-top: 700px;
+        margin-top: 500px;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -355,7 +361,6 @@
 
         .seccion-minecraft {
           margin-top: 80px;
-          padding: 0 30px 0 30px;
         }
 
         .contenedor-minecraft {
@@ -457,7 +462,6 @@
 
         .seccion-minecraft {
           margin-top: 60px;
-          padding: 0 20px 0 20px;
         }
 
         .contenedor-minecraft {
@@ -512,7 +516,7 @@
         </p>
       </div>
       <div class="imagen-vinilo">
-        <img src="vinilo.png" alt="Disco de vinilo" />
+        <img src="vinilo.png" alt="Disco de vinilo" id="disco-vinilo" />
       </div>
     </div>
 
@@ -529,5 +533,39 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // URL de la playlist completa como fallback
+      const PLAYLIST_URL =
+        "https://open.spotify.com/playlist/1b1SIHvCEpZUa1Pr3UrsA0";
+
+      // Función para obtener una canción aleatoria
+      function obtenerCancionAleatoria() {
+        console.log("🎵 ¡Reproduciendo música especial para Ana!");
+
+        // Abrir la playlist en Spotify
+        // Ana puede activar el modo shuffle para obtener canciones aleatorias
+        window.open(PLAYLIST_URL, "_blank");
+
+        // Mensaje en consola
+        console.log(
+          "🎶 Playlist abierta en Spotify - ¡Activa shuffle para canciones aleatorias!"
+        );
+      }
+
+      // Event listener cuando la página carga
+      document.addEventListener("DOMContentLoaded", function () {
+        const disco = document.getElementById("disco-vinilo");
+        if (disco) {
+          // Agregar el evento de clic
+          disco.addEventListener("click", obtenerCancionAleatoria);
+
+          // Agregar tooltip
+          disco.title = "🎵 Haz clic para escuchar música especial";
+
+          console.log("✅ Disco de vinilo listo para reproducir música");
+        }
+      });
+    </script>
   </body>
 </html>

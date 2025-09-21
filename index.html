@@ -586,7 +586,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 300px 0 80px 0; /* más espacio arriba */
+        margin: 300px 0 80px 0;
         position: relative;
       }
 
@@ -594,7 +594,7 @@
         position: relative;
         width: 90%;
         max-width: 800px;
-        aspect-ratio: 16 / 9; /* proporción horizontal */
+        aspect-ratio: 3 / 2; /* 👈 Proporción horizontal por defecto */
         overflow: hidden;
         border-radius: 12px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -633,10 +633,12 @@
         cursor: crosshair;
       }
 
-      /* Versión móvil */
+      /* 📱 Versión móvil → se cambia a vertical */
       @media (max-width: 768px) {
         .contenedor-borrable {
-          aspect-ratio: 3 / 4; /* vertical en celular */
+          width: 95%;
+          max-width: 500px;
+          aspect-ratio: 2 / 3; /* 👈 ahora vertical */
         }
 
         .mensaje-oculto h2 {
@@ -654,7 +656,7 @@
       const ctx = canvasScratch.getContext("2d");
 
       const img = new Image();
-      img.src = "mosaico.png"; // asegúrate de que esté en la misma carpeta
+      img.src = "mosaico.png"; // asegúrate que esté en la misma carpeta que tu HTML
 
       function resizeCanvas() {
         const cont = canvasScratch.parentElement;
@@ -689,7 +691,6 @@
         };
       }
 
-      // Eventos mouse
       canvasScratch.addEventListener("mousemove", (e) => {
         if (e.buttons > 0) {
           const pos = getMousePos(canvasScratch, e);
@@ -697,7 +698,6 @@
         }
       });
 
-      // Eventos touch
       canvasScratch.addEventListener("touchmove", (e) => {
         e.preventDefault();
         const touch = e.touches[0];
@@ -707,7 +707,7 @@
     </script>
 
     <!-- Sección del corazón -->
-    <section class="seccion-corazon">
+    <!-- <section class="seccion-corazon">
       <canvas id="heartCanvas"></canvas>
       <svg id="heartPath" viewBox="0 0 600 552">
         <path
@@ -818,6 +818,6 @@
       window.addEventListener("resize", onWindowResize, false);
 
       render();
-    </script>
+    </script>-->
   </body>
 </html>

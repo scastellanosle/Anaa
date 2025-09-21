@@ -572,8 +572,11 @@
       <div class="contenedor-borrable">
         <!-- Mensaje oculto detrás -->
         <div class="mensaje-oculto">
-          <h2>🎉 ¡Feliz cumpleaños Ana! 🎉</h2>
-          <p>Eres única, especial y muy querida 💖</p>
+          <p>
+            Solo quiero que todas las noches descanses sabiendo que eres amada
+            por mi y que cada mañana despiertes sabiendo que te amo con toda mi
+            vida.
+          </p>
         </div>
         <!-- Capa de imagen a borrar -->
         <canvas id="scratchCanvas"></canvas>
@@ -586,7 +589,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 300px 0 80px 0;
+        margin: 120px 0 80px 0;
         position: relative;
       }
 
@@ -596,32 +599,41 @@
         max-width: 800px;
         aspect-ratio: 3 / 2; /* 👈 Proporción horizontal por defecto */
         overflow: hidden;
-
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       }
-
       .mensaje-oculto {
         position: absolute;
         inset: 0;
-        background: #f2e8e8;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         font-family: "Inter", sans-serif;
-        color: #d84a77;
+        color: #ffffff;
         text-align: center;
         padding: 20px;
         z-index: 0;
+
+        /* Imagen como fondo */
+        background: url("kitty.png") center/cover no-repeat;
       }
 
-      .mensaje-oculto h2 {
-        font-size: 2rem;
-        margin-bottom: 15px;
+      /* Capa semitransparente */
+      .mensaje-oculto::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.623); /* 👈 negro con 30% de opacidad */
+        z-index: -1;
       }
 
       .mensaje-oculto p {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        max-width: 85%;
+        border-radius: 8px;
+        padding: 10px 15px;
+        -webkit-text-stroke: 0.3px #000000; /* 👈 borde blanco fino */
       }
 
       #scratchCanvas {
@@ -641,12 +653,13 @@
           aspect-ratio: 2 / 3; /* 👈 ahora vertical */
         }
 
-        .mensaje-oculto h2 {
-          font-size: 1.5rem;
+        .mensaje-oculto {
+          background-size: cover; /* en móvil la imagen ocupa más espacio */
         }
 
         .mensaje-oculto p {
-          font-size: 1rem;
+          font-size: 1.3rem;
+          max-width: 95%;
         }
       }
     </style>
@@ -657,7 +670,6 @@
 
       const img = new Image();
       img.src = "mosaico.png"; // asegúrate que esté en la misma carpeta que tu HTML
-
       function resizeCanvas() {
         const cont = canvasScratch.parentElement;
         canvasScratch.width = cont.offsetWidth;
@@ -665,7 +677,51 @@
 
         if (img.complete) {
           ctx.globalCompositeOperation = "source-over";
-          ctx.drawImage(img, 0, 0, canvasScratch.width, canvasScratch.height);
+          ctx.clearRect(0, 0, canvasScratch.width, canvasScratch.height);
+
+          const imgAspect = img.width / img.height;
+          const canvasAspect = canvasScratch.width / canvasScratch.height;
+
+          if (canvasAspect < 1) {
+            // 📱 Canvas vertical → rotar imagen 90°
+            ctx.save();
+            ctx.translate(canvasScratch.width / 2, canvasScratch.height / 2);
+            ctx.rotate(Math.PI / 2); // 90 grados
+
+            // Dibujar centrado
+            const scale = Math.min(
+              canvasScratch.height / img.width,
+              canvasScratch.width / img.height
+            );
+
+            const drawWidth = img.width * scale;
+            const drawHeight = img.height * scale;
+
+            ctx.drawImage(
+              img,
+              -drawWidth / 2,
+              -drawHeight / 2,
+              drawWidth,
+              drawHeight
+            );
+
+            ctx.restore();
+          } else {
+            // 🖥️ Canvas horizontal → normal
+            const scale = Math.min(
+              canvasScratch.width / img.width,
+              canvasScratch.height / img.height
+            );
+
+            const drawWidth = img.width * scale;
+            const drawHeight = img.height * scale;
+
+            const offsetX = (canvasScratch.width - drawWidth) / 2;
+            const offsetY = (canvasScratch.height - drawHeight) / 2;
+
+            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+          }
+
           ctx.globalCompositeOperation = "destination-out";
         }
       }

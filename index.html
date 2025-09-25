@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feliz Cumpleaños Ana</title>
-    <!-- Fuentes Italianno e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,18 +11,18 @@
       rel="stylesheet"
     />
     <style>
-      /* Estilos base para Desktop (1200px+) */
+      /* Estilos base para Desktop (1200px+)
+           */
       body {
         margin: 0;
         padding-top: 56px;
         min-height: 100vh;
         background: radial-gradient(
-        circle,
-      rgba(255, 255, 255, 1) 40%,
-      rgba(250, 219, 230, 1) 60%,
-      rgba(255, 160, 172, 1) 80%
-      );
-
+          circle,
+          rgba(255, 255, 255, 1) 40%,
+          rgba(250, 219, 230, 1) 60%,
+          rgba(255, 160, 172, 1) 80%
+        );
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -138,6 +137,12 @@
         display: block;
         width: 100%;
         max-width: 1000px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .contenedor-minecraft:hover {
+        transform: scale(1.02);
       }
 
       .imagen-minecraft {
@@ -161,6 +166,7 @@
         top: 15%;
         left: 25%;
         z-index: 1;
+        pointer-events: none;
       }
 
       /* Laptops con pantallas anchas (1200px+ pero altura limitada) */
@@ -361,8 +367,8 @@
         }
 
         .imagen-vinilo img {
-          width: 280px;
-          height: 280px;
+          width: 320px;
+          height: 320px;
         }
 
         .seccion-minecraft {
@@ -462,8 +468,8 @@
         }
 
         .imagen-vinilo img {
-          width: 200px;
-          height: 200px;
+          width: 250px;
+          height: 250px;
         }
 
         .seccion-minecraft {
@@ -484,138 +490,6 @@
           height: 25px;
         }
       }
-    </style>
-  </head>
-  <body>
-    <div class="contenido">
-      <h1 class="titulo-flex">
-        <span>Feliz&nbsp;</span>
-        <span>Cumpleaños</span>
-      </h1>
-      <h2>Ana</h2>
-      <img src="gato.png" alt="gatito lindo" />
-    </div>
-
-    <!-- Nueva sección con texto e imagen -->
-    <div class="seccion-texto">
-      <div class="texto-contenido">
-        <p>
-          Hoy celebro no solo el día en que llegaste al mundo, sino también la
-          luz, la fuerza y la inspiración que compartes con quienes tienen la
-          fortuna de conocerte. Deseo de corazón que la vida te recompense con
-          creces por todo el esfuerzo, la dedicación y el amor que entregas cada
-          día.
-        </p>
-
-        <p>
-          Eres una mujer admirable, ejemplo de constancia y fortaleza, y al
-          mismo tiempo una persona llena de ternura y autenticidad. Cualquier
-          persona se sentiría profundamente agradecida de tenerte en su vida,
-          porque contigo todo se vuelve más valioso y especial.
-        </p>
-
-        <p>
-          Eres única, indescriptible, la niña más indefinible del mundo, y
-          precisamente en esa esencia tan tuya está la belleza que te distingue.
-          Que este nuevo año de vida te traiga alegría, paz, y todos los sueños
-          que tu corazón anhele.
-        </p>
-      </div>
-      <div class="imagen-vinilo">
-        <img src="vinilo.png" alt="Disco de vinilo" id="disco-vinilo" />
-      </div>
-    </div>
-
-    <!-- Sección independiente para imagen Minecraft -->
-    <section class="seccion-minecraft">
-      <div class="contenedor-minecraft">
-        <div class="imagen-minecraft">
-          <img
-            src="minecraft-paisaje.png"
-            alt="Paisaje de Minecraft"
-            class="paisaje-minecraft"
-          />
-          <img src="abeja.gif" alt="Abeja animada" class="abeja-gif" />
-        </div>
-      </div>
-    </section>
-
-    <script>
-      // URL de la playlist completa como fallback
-      const PLAYLIST_URL =
-        "https://open.spotify.com/playlist/1b1SIHvCEpZUa1Pr3UrsA0";
-
-      // Función para obtener una canción aleatoria
-      function obtenerCancionAleatoria() {
-        console.log("🎵 ¡Reproduciendo música especial para Ana!");
-
-        // Abrir la playlist en Spotify
-        // Ana puede activar el modo shuffle para obtener canciones aleatorias
-        window.open(PLAYLIST_URL, "_blank");
-
-        // Mensaje en consola
-        console.log(
-          "🎶 Playlist abierta en Spotify - ¡Activa shuffle para canciones aleatorias!"
-        );
-      }
-
-      // Event listener cuando la página carga
-      document.addEventListener("DOMContentLoaded", function () {
-        const disco = document.getElementById("disco-vinilo");
-        if (disco) {
-          // Agregar el evento de clic
-          disco.addEventListener("click", obtenerCancionAleatoria);
-
-          // Agregar tooltip
-          disco.title = "🎵 Haz clic para escuchar música especial";
-
-          console.log("✅ Disco de vinilo listo para reproducir música");
-        }
-      });
-    </script>
-    <!-- Sección de imagen borrable -->
-    <section class="seccion-borrable">
-      <div class="contenedor-borrable">
-        <!-- Mensaje oculto detrás -->
-        <div class="mensaje-oculto">
-          <p>
-            Solo quiero que todas las noches descanses sabiendo que eres amada
-            por mi y que cada mañana despiertes sabiendo que te amo con toda mi
-            vida.
-          </p>
-        </div>
-        <!-- Capa de imagen a borrar -->
-        <canvas id="scratchCanvas"></canvas>
-      </div>
-    </section>
-    <div class="seccion-texto">
-      <div class="texto-contenido">
-        <p>
-          Hoy celebro no solo el día en que llegaste al mundo, sino también la
-          luz, la fuerza y la inspiración que compartes con quienes tienen la
-          fortuna de conocerte. Deseo de corazón que la vida te recompense con
-          creces por todo el esfuerzo, la dedicación y el amor que entregas cada
-          día.
-        </p>
-
-        <p>
-          Eres una mujer admirable, ejemplo de constancia y fortaleza, y al
-          mismo tiempo una persona llena de ternura y autenticidad. Cualquier
-          persona se sentiría profundamente agradecida de tenerte en su vida,
-          porque contigo todo se vuelve más valioso y especial.
-        </p>
-
-        <p>
-          Eres única, indescriptible, la niña más indefinible del mundo, y
-          precisamente en esa esencia tan tuya está la belleza que te distingue.
-          Que este nuevo año de vida te traiga alegría, paz, y todos los sueños
-          que tu corazón anhele.
-        </p>
-      </div>
-        <div class="imagen-vinilo">
-        <img src="medicina.png" alt="Medicina" id="imagen-medicina" />
-      </div>
-    <style>
       .seccion-borrable {
         width: 100%;
         display: flex;
@@ -695,7 +569,124 @@
         }
       }
     </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1 class="titulo-flex">
+        <span>Feliz </span>
+        <span>Cumpleaños</span>
+      </h1>
+      <h2>Ana</h2>
+      <img src="gato.png" alt="gatito lindo" />
+    </div>
 
+    <div class="seccion-texto">
+      <div class="texto-contenido">
+        <p>
+          Hoy celebro no solo el día en que llegaste al mundo, sino también la
+          luz, la fuerza y la inspiración que compartes con quienes tienen la
+          fortuna de conocerte. Deseo de corazón que la vida te recompense con
+          creces por todo el esfuerzo, la dedicación y el amor que entregas cada
+          día.
+        </p>
+
+        <p>
+          Eres una mujer admirable, ejemplo de constancia y fortaleza, y al
+          mismo tiempo una persona llena de ternura y autenticidad. Cualquier
+          persona se sentiría profundamente agradecida de tenerte en su vida,
+          porque contigo todo se vuelve más valioso y especial.
+        </p>
+
+        <p>
+          Eres única, indescriptible, la niña más indefinible del mundo, y
+          precisamente en esa esencia tan tuya está la belleza que te distingue.
+          Que este nuevo año de vida te traiga alegría, paz, y todos los sueños
+          que tu corazón anhele.
+        </p>
+      </div>
+      <div class="imagen-vinilo">
+        <img src="vinilo.png" alt="Disco de vinilo" id="disco-vinilo" />
+      </div>
+    </div>
+
+    <section class="seccion-minecraft">
+      <div class="contenedor-minecraft" id="minecraft-container">
+        <div class="imagen-minecraft">
+          <img
+            src="minecraft-paisaje.png"
+            alt="Paisaje de Minecraft"
+            class="paisaje-minecraft"
+          />
+          <img src="abeja.gif" alt="Abeja animada" class="abeja-gif" />
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-borrable">
+      <div class="contenedor-borrable">
+        <div class="mensaje-oculto">
+          <p>
+            Solo quiero que todas las noches descanses sabiendo que eres amada
+            por mi y que cada mañana despiertes sabiendo que te amo con toda mi
+            vida.
+          </p>
+        </div>
+        <canvas id="scratchCanvas"></canvas>
+      </div>
+    </section>
+
+    <script>
+      // URL de la playlist completa como fallback
+      const PLAYLIST_URL =
+        "https://open.spotify.com/playlist/1b1SIHvCEpZUa1Pr3UrsA0";
+
+      // Función para obtener una canción aleatoria
+      function obtenerCancionAleatoria() {
+        console.log("🎵 ¡Reproduciendo música especial para Ana!");
+
+        // Abrir la playlist en Spotify
+        // Ana puede activar el modo shuffle para obtener canciones aleatorias
+        window.open(PLAYLIST_URL, "_blank");
+
+        // Mensaje en consola
+        console.log(
+          "🎶 Playlist abierta en Spotify - ¡Activa shuffle para canciones aleatorias!"
+        );
+      }
+
+      // Función para ir a valentine-flower.html
+      function irAValentineFlower() {
+        console.log("🌸 Navegando a valentine-flower.html");
+        window.location.href = "valentine-flower.html";
+      }
+
+      // Event listener cuando la página carga
+      document.addEventListener("DOMContentLoaded", function () {
+        const disco = document.getElementById("disco-vinilo");
+        if (disco) {
+          // Agregar el evento de clic para el vinilo
+          disco.addEventListener("click", obtenerCancionAleatoria);
+
+          // Agregar tooltip
+          disco.title = "🎵 Haz clic para escuchar música especial";
+
+          console.log("✅ Disco de vinilo listo para reproducir música");
+        }
+
+        const minecraftContainer = document.getElementById(
+          "minecraft-container"
+        );
+        if (minecraftContainer) {
+          // Agregar el evento de clic para Minecraft
+          minecraftContainer.addEventListener("click", irAValentineFlower);
+
+          // Agregar tooltip
+          minecraftContainer.title = "🌸 Haz clic para continuar la aventura";
+
+          console.log("✅ Imagen de Minecraft lista para navegar");
+        }
+      });
+    </script>
     <script>
       const canvasScratch = document.getElementById("scratchCanvas");
       const ctx = canvasScratch.getContext("2d");

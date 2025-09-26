@@ -23,6 +23,7 @@
           rgba(250, 219, 230, 1) 60%,
           rgba(255, 160, 172, 1) 80%
         );
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -120,6 +121,58 @@
       }
 
       .imagen-vinilo img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Nueva sección de texto final con imagen */
+      .seccion-texto-final {
+        width: 100%;
+        max-width: none;
+        margin-top: 120px;
+        padding: 60px 0 60px 100px;
+        display: flex;
+        align-items: flex-start;
+        gap: 80px;
+      }
+
+      .texto-contenido-final {
+        flex: 2;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 35px;
+        line-height: 1.2;
+        color: #000000;
+        text-align: left;
+      }
+
+      .texto-contenido-final p {
+        margin-bottom: 30px;
+      }
+
+      .texto-contenido-final p:last-child {
+        margin-bottom: 0;
+      }
+
+      .imagen-final {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-right: 50px;
+      }
+
+      .imagen-final img {
+        width: 760px;
+        height: 760px;
+        object-fit: contain;
+        margin: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .imagen-final img:hover {
         transform: scale(1.05);
       }
 
@@ -228,6 +281,25 @@
           width: 56px;
           height: 56px;
         }
+
+        .seccion-texto-final {
+          margin-top: 80px;
+          padding: 40px 0 40px 80px;
+          gap: 50px;
+        }
+
+        .texto-contenido-final {
+          font-size: 28px;
+        }
+
+        .imagen-final {
+          padding-right: 30px;
+        }
+
+        .imagen-final img {
+          width: 480px;
+          height: 480px;
+        }
       }
 
       /* Tablets y Laptops pequeñas (901px - 1199px) */
@@ -288,6 +360,25 @@
         .abeja-gif {
           width: 49px;
           height: 49px;
+        }
+
+        .seccion-texto-final {
+          margin-top: 60px;
+          padding: 30px 0 30px 50px;
+          gap: 40px;
+        }
+
+        .texto-contenido-final {
+          font-size: 24px;
+        }
+
+        .imagen-final {
+          padding-right: 25px;
+        }
+
+        .imagen-final img {
+          width: 380px;
+          height: 380px;
         }
       }
 
@@ -387,6 +478,33 @@
         .abeja-gif {
           width: 30px;
           height: 30px;
+        }
+
+        .seccion-texto-final {
+          margin-top: 60px;
+          padding: 20px 0 20px 30px;
+          flex-direction: column;
+          gap: 30px;
+          align-items: center;
+        }
+
+        .texto-contenido-final {
+          font-size: 18px;
+          text-align: left;
+          max-width: 100%;
+          order: 1;
+          padding-right: 30px;
+        }
+
+        .imagen-final {
+          order: 2;
+          padding-top: 0;
+          padding-right: 0;
+        }
+
+        .imagen-final img {
+          width: 320px;
+          height: 320px;
         }
       }
 
@@ -488,6 +606,34 @@
         .abeja-gif {
           width: 25px;
           height: 25px;
+        }
+
+        .seccion-texto-final {
+          margin-top: 40px;
+          padding: 15px 0 15px 20px;
+          flex-direction: column;
+          gap: 25px;
+          align-items: center;
+        }
+
+        .texto-contenido-final {
+          font-size: 16px;
+          text-align: left;
+          line-height: 1.5;
+          max-width: 100%;
+          order: 1;
+          padding-right: 20px;
+        }
+
+        .imagen-final {
+          order: 2;
+          padding-top: 0;
+          padding-right: 0;
+        }
+
+        .imagen-final img {
+          width: 250px;
+          height: 250px;
         }
       }
       .seccion-borrable {
@@ -634,6 +780,34 @@
         <canvas id="scratchCanvas"></canvas>
       </div>
     </section>
+
+    <!-- Nueva sección de texto con imagen (similar al vinilo) -->
+    <div class="seccion-texto-final">
+      <div class="texto-contenido-final">
+        <p>
+          Tu risa ilumina mis días más grises y tu presencia convierte cualquier
+          momento ordinario en algo extraordinario. Cada conversación contigo es
+          un regalo que atesoro, y cada sonrisa tuya es una melodía que resuena
+          en mi corazón.
+        </p>
+
+        <p>
+          Eres la inspiración detrás de mis mejores momentos y la razón por la
+          que cada día tiene más sentido. Tu forma de ver la vida, tu bondad
+          infinita y tu manera única de hacer que todo sea mejor, me recuerdan
+          constantemente lo afortunado que soy de tenerte.
+        </p>
+
+        <p>
+          Que este nuevo año de vida te traiga todo lo que tu corazón desea y
+          más. Que cada sueño se convierta en realidad y que la felicidad te
+          acompañe en cada paso del camino.
+        </p>
+      </div>
+      <div class="imagen-final">
+        <img src="medicina.png" alt="Imagen especial" id="imagen-especial" />
+      </div>
+    </div>
 
     <script>
       // URL de la playlist completa como fallback

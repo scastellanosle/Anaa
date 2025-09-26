@@ -124,6 +124,24 @@
         transform: scale(1.05);
       }
 
+      /* Texto rosa debajo del vinilo */
+      .texto-vinilo {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        padding: 0 100px;
+      }
+
+      .texto-vinilo p {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 24px;
+        color: #d59ea4;
+        margin: 0;
+        line-height: 1.4;
+      }
+
       /* Nueva sección de texto final con imagen */
       .seccion-texto-final {
         width: 100%;
@@ -222,6 +240,24 @@
         pointer-events: none;
       }
 
+      /* Texto rosa debajo de Minecraft */
+      .texto-minecraft {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        padding: 0 100px;
+      }
+
+      .texto-minecraft p {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 24px;
+        color: #d59ea4;
+        margin: 0;
+        line-height: 1.4;
+      }
+
       /* Laptops con pantallas anchas (1200px+ pero altura limitada) */
       @media (min-width: 1200px) and (max-height: 800px) {
         body {
@@ -262,6 +298,14 @@
           height: 480px;
         }
 
+        .texto-vinilo {
+          padding: 0 80px;
+        }
+
+        .texto-vinilo p {
+          font-size: 20px;
+        }
+
         .seccion-minecraft {
           margin-top: 450px;
           padding: 0;
@@ -280,6 +324,14 @@
         .abeja-gif {
           width: 56px;
           height: 56px;
+        }
+
+        .texto-minecraft {
+          padding: 0 80px;
+        }
+
+        .texto-minecraft p {
+          font-size: 20px;
         }
 
         .seccion-texto-final {
@@ -342,6 +394,14 @@
           height: 380px;
         }
 
+        .texto-vinilo {
+          padding: 0 50px;
+        }
+
+        .texto-vinilo p {
+          font-size: 18px;
+        }
+
         .seccion-minecraft {
           margin-top: 400px;
           padding: 0;
@@ -360,6 +420,14 @@
         .abeja-gif {
           width: 49px;
           height: 49px;
+        }
+
+        .texto-minecraft {
+          padding: 0 50px;
+        }
+
+        .texto-minecraft p {
+          font-size: 18px;
         }
 
         .seccion-texto-final {
@@ -462,6 +530,15 @@
           height: 320px;
         }
 
+        .texto-vinilo {
+          padding: 0 30px;
+          margin-top: 20px;
+        }
+
+        .texto-vinilo p {
+          font-size: 16px;
+        }
+
         .seccion-minecraft {
           margin-top: 80px;
         }
@@ -478,6 +555,15 @@
         .abeja-gif {
           width: 30px;
           height: 30px;
+        }
+
+        .texto-minecraft {
+          padding: 0 30px;
+          margin-top: 20px;
+        }
+
+        .texto-minecraft p {
+          font-size: 16px;
         }
 
         .seccion-texto-final {
@@ -590,6 +676,15 @@
           height: 250px;
         }
 
+        .texto-vinilo {
+          padding: 0 20px;
+          margin-top: 15px;
+        }
+
+        .texto-vinilo p {
+          font-size: 14px;
+        }
+
         .seccion-minecraft {
           margin-top: 60px;
         }
@@ -606,6 +701,15 @@
         .abeja-gif {
           width: 25px;
           height: 25px;
+        }
+
+        .texto-minecraft {
+          padding: 0 20px;
+          margin-top: 15px;
+        }
+
+        .texto-minecraft p {
+          font-size: 14px;
         }
 
         .seccion-texto-final {
@@ -755,6 +859,11 @@
       </div>
     </div>
 
+    <!-- Texto rosa debajo del vinilo -->
+    <div class="texto-vinilo">
+      <p>Cancion que me recuerda a ti</p>
+    </div>
+
     <section class="seccion-minecraft">
       <div class="contenedor-minecraft" id="minecraft-container">
         <div class="imagen-minecraft">
@@ -768,13 +877,19 @@
       </div>
     </section>
 
+    <!-- Texto rosa debajo de Minecraft -->
+    <div class="texto-minecraft">
+      <p>Eres un lugar bonito en Minecraft, dentro encontraras algo especial</p>
+    </div>
+
     <section class="seccion-borrable">
       <div class="contenedor-borrable">
         <div class="mensaje-oculto">
           <p>
-            Solo quiero que todas las noches descanses sabiendo que eres amada
-            por mi y que cada mañana despiertes sabiendo que te amo con toda mi
-            vida.
+            A ti podría decirte que has de saber que ya ocupas mis ojos, que
+            llevo tu risa incrustada en mis arterias, espero que te pasen cosas
+            hermosas y cuando te pasen espero que puedas creer que mereces cada
+            una de ellas.
           </p>
         </div>
         <canvas id="scratchCanvas"></canvas>
@@ -810,27 +925,18 @@
     </div>
 
     <script>
-      // URL de la playlist completa como fallback
-      const PLAYLIST_URL =
-        "https://open.spotify.com/playlist/1b1SIHvCEpZUa1Pr3UrsA0";
-
-      // Función para obtener una canción aleatoria
-      function obtenerCancionAleatoria() {
-        console.log("🎵 ¡Reproduciendo música especial para Ana!");
-
-        // Abrir la playlist en Spotify
-        // Ana puede activar el modo shuffle para obtener canciones aleatorias
-        window.open(PLAYLIST_URL, "_blank");
-
-        // Mensaje en consola
-        console.log(
-          "🎶 Playlist abierta en Spotify - ¡Activa shuffle para canciones aleatorias!"
-        );
+      // Función para ir a una canción específica de Spotify
+      function irACancionEspecifica() {
+        console.log("Abriendo canción específica de Spotify");
+        // Cambia este enlace por el de la canción que desees
+        const CANCION_ESPECIFICA =
+          "https://open.spotify.com/intl-es/track/2AEsJSs6b7OAhPkTHGmx21?si=82e1b9bfcd904e8c";
+        window.open(CANCION_ESPECIFICA, "_blank");
       }
 
       // Función para ir a valentine-flower.html
       function irAValentineFlower() {
-        console.log("🌸 Navegando a valentine-flower.html");
+        console.log("Navegando a valentine-flower.html");
         window.location.href = "valentine-flower.html";
       }
 
@@ -838,13 +944,15 @@
       document.addEventListener("DOMContentLoaded", function () {
         const disco = document.getElementById("disco-vinilo");
         if (disco) {
-          // Agregar el evento de clic para el vinilo
-          disco.addEventListener("click", obtenerCancionAleatoria);
+          // Agregar el evento de clic para el vinilo (canción específica)
+          disco.addEventListener("click", irACancionEspecifica);
 
           // Agregar tooltip
-          disco.title = "🎵 Haz clic para escuchar música especial";
+          disco.title = "Haz clic para escuchar una canción especial";
 
-          console.log("✅ Disco de vinilo listo para reproducir música");
+          console.log(
+            "Disco de vinilo listo para reproducir canción específica"
+          );
         }
 
         const minecraftContainer = document.getElementById(
@@ -855,9 +963,9 @@
           minecraftContainer.addEventListener("click", irAValentineFlower);
 
           // Agregar tooltip
-          minecraftContainer.title = "🌸 Haz clic para continuar la aventura";
+          minecraftContainer.title = "Haz clic para continuar la aventura";
 
-          console.log("✅ Imagen de Minecraft lista para navegar");
+          console.log("Imagen de Minecraft lista para navegar");
         }
       });
     </script>

@@ -926,16 +926,19 @@ body {
       transparent,
       var(--dark-color) 98%
     ),
-    linear-gradient(
-      to bottom right,
-      var(--peony-pink-light) 45%,
-      transparent 50%,
-      transparent
-    ); /* Rosa claro peonía */
+    /* CAMBIA ESTO: (var(--peony-pink-light) 45%) A: */
+      linear-gradient(
+        to bottom right,
+        var(--leaf-color-light) 45%,
+        transparent 50%,
+        transparent
+      ); /* Se usa verde claro para que coincida con el resto de hojas */
+
+  /* Y la máscara también debe ser verde si no lo es ya: */
   -webkit-mask-image: linear-gradient(
     135deg,
     var(--leaf-color-mid) 40%,
-    /* Hoja verde oscura */ transparent 50%,
+    transparent 50%,
     transparent
   );
 }

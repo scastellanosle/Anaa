@@ -352,6 +352,13 @@
           width: 480px;
           height: 480px;
         }
+
+        /* Responsive para mensaje oculto en laptop */
+        .mensaje-oculto p {
+          font-size: 1.4rem;
+          max-width: 90%;
+          padding: 8px 12px;
+        }
       }
 
       /* Tablets y Laptops pequeñas (901px - 1199px) */
@@ -447,6 +454,13 @@
         .imagen-final img {
           width: 380px;
           height: 380px;
+        }
+
+        /* Responsive para mensaje oculto en tablet grande */
+        .mensaje-oculto p {
+          font-size: 1.3rem;
+          max-width: 90%;
+          padding: 8px 12px;
         }
       }
 
@@ -592,6 +606,14 @@
           width: 320px;
           height: 320px;
         }
+
+        /* Responsive para mensaje oculto en tablet */
+        .mensaje-oculto p {
+          font-size: 1.2rem;
+          max-width: 92%;
+          padding: 6px 10px;
+          line-height: 1.5;
+        }
       }
 
       /* Móviles (600px y menos) */
@@ -658,7 +680,7 @@
 
         .texto-contenido {
           font-size: 16px;
-          text-align: left;
+          text-align: center;
           line-height: 1.5;
           max-width: 100%;
           order: 1;
@@ -722,7 +744,7 @@
 
         .texto-contenido-final {
           font-size: 16px;
-          text-align: left;
+          text-align: center;
           line-height: 1.5;
           max-width: 100%;
           order: 1;
@@ -738,6 +760,15 @@
         .imagen-final img {
           width: 250px;
           height: 250px;
+        }
+
+        /* Responsive para mensaje oculto en móvil */
+        .mensaje-oculto p {
+          font-size: 1rem;
+          max-width: 95%;
+          padding: 6px 8px;
+          line-height: 1.4;
+          -webkit-text-stroke: 0.2px #000000;
         }
       }
       .seccion-borrable {
@@ -789,7 +820,7 @@
         max-width: 85%;
         border-radius: 8px;
         padding: 10px 15px;
-        -webkit-text-stroke: 0.3px #000000; /* 👈 borde blanco fino */
+        -webkit-text-stroke: 0.3px #000000;
       }
 
       #scratchCanvas {
@@ -814,7 +845,40 @@
         }
 
         .mensaje-oculto p {
-          font-size: 1.3rem;
+          font-size: 1rem;
+          max-width: 95%;
+          padding: 8px 10px;
+          line-height: 1.4;
+          -webkit-text-stroke: 0.2px #000000;
+        }
+      }
+      /* Estilo para el texto que va al final, centrado y blanco */
+      .texto-final-centrado {
+        width: 100%;
+        text-align: center;
+        padding: 40px 20px; /* Un poco de espacio arriba, abajo y a los lados */
+        margin-top: 50px; /* Separación del contenido anterior */
+        background-color: transparent; /* Fondo transparente por si quieres un color de fondo */
+      }
+
+      .texto-final-centrado p {
+        font-family: "Inter", sans-serif; /* Usamos una de las fuentes que ya tienes */
+        font-size: 28px; /* Tamaño de fuente grande, ajústalo a tu gusto */
+        color: #ffffff; /* Color blanco */
+        font-weight: 600; /* Negrita */
+        margin: 0 auto;
+        max-width: 900px; /* Limita el ancho para que no se extienda demasiado en pantallas grandes */
+        line-height: 1.4;
+      }
+
+      /* Ajustes opcionales para pantallas pequeñas (móviles) */
+      @media (max-width: 600px) {
+        .texto-final-centrado {
+          padding: 30px 10px;
+          margin-top: 30px;
+        }
+        .texto-final-centrado p {
+          font-size: 18px;
           max-width: 95%;
         }
       }
@@ -900,23 +964,13 @@
     <div class="seccion-texto-final">
       <div class="texto-contenido-final">
         <p>
-          Tu risa ilumina mis días más grises y tu presencia convierte cualquier
-          momento ordinario en algo extraordinario. Cada conversación contigo es
-          un regalo que atesoro, y cada sonrisa tuya es una melodía que resuena
-          en mi corazón.
-        </p>
-
-        <p>
-          Eres la inspiración detrás de mis mejores momentos y la razón por la
-          que cada día tiene más sentido. Tu forma de ver la vida, tu bondad
-          infinita y tu manera única de hacer que todo sea mejor, me recuerdan
-          constantemente lo afortunado que soy de tenerte.
-        </p>
-
-        <p>
-          Que este nuevo año de vida te traiga todo lo que tu corazón desea y
-          más. Que cada sueño se convierta en realidad y que la felicidad te
-          acompañe en cada paso del camino.
+          Me alegra saber que serás una excelente doctora, y que en el futuro
+          podrás hacer lo que te gusta, siempre que veo algo relacionado con
+          medicina me acuerdo de ti, deseo que la vida te devuelva el esfuerzo
+          que se que le colocas a las cosas que quieres lograr, y por eso mismo
+          eres una persona de admirar, debo decir que confió plenamente en la
+          casualidad de haberte conocido. Que nunca intentare olvidarte, y que,
+          si lo hiciera, no lo conseguiría. Te quiero mucho Ana.
         </p>
       </div>
       <div class="imagen-final">
@@ -1067,4 +1121,7 @@
       });
     </script>
   </body>
+  <footer class="texto-final-centrado">
+    <p>Con mucho cariño de parte de Sebastian, feliz Cumpleaños Ana.</p>
+  </footer>
 </html>
